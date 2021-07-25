@@ -39,6 +39,8 @@ class UserViewModel: ViewModel() {
                 if(response.isSuccessful){
                     _user.postValue(response.body())
                     _state.postValue("Successful")
+                }else{
+                    _state.postValue("wrong password/email")
                 }
             }catch (e: Exception){
                 _state.postValue("wrong password/email")
